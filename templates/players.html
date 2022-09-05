@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="World Top transfers">
+    <meta name="keywords" content="football,clubs, football club,Real Madrid, football transfer, top transfers,">
+    <link rel="icon" href="{% static './img/inter.logo.png' %}">
+    <meta name="author" content="Ali Egamberdiyev">
+    <title>Players</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/main.css' %}" />
+    <link rel="icon" href="{% static 'img/inter.logo.png' %}">
+    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' %}" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{% static 'main.js' %}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="country-menu-btn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <div class="navbar-menu-btn">
+            <div class="line4"></div>
+            <div class="line5"></div>
+            <div class="line6"></div>
+        </div>
+        <div class="links">
+          <div><a href="/clubs/">CLUBS</a></div>
+          <div><a href="/last_trans/">LATEST TRANSFERS</a></div>
+          <div><a href="/players/">PLAYERS</a></div>
+          <div><a href="/u20_oyinchi/">U-20 PLAYERS</a></div>
+          <div><a href="/sinovlar/">TRYOUTS</a></div>
+          <div><a href="/stats/">STATS</a></div>
+          <div><a href="/about/">ABOUT US</a></div>
+        </div>
+      </div>
+      <div class="country-clubs">
+        <h2 id="title">Clubs by country</h2>
+        <div class="country">
+            {% for i in davlats %}
+          <div>
+            <a href="/clubs/{{i.id}}/">{{i.nom}}</a>
+          </div>
+          <hr>
+          <a href="/transfer/">Transfers archive</a>
+          {% endfor %}
+        </div>
+   </div>
+        <h2>– PLAYERS –</h2>
+      <div class="content">
+      {% for p in players %}
+        <table class="playerss">
+          <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.ism}}</td>
+            <td>{{p.club.nom}}</td>
+            <td>{{p.narx}}</td>
+          </tr>
+        </table>
+      {% endfor %}
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae soluta sequi quia eos cupiditate rerum accusantium odit enim, expedita, architecto error dignissimos voluptatibus. Nisi illo, maiores fugit amet neque eveniet!</p>
+      </div>
+      <div class="footer state-footer">
+        <a href="https://www.facebook.com/topfootballtransfers/">
+          <div>
+            <i class="fa-brands fa-facebook-f"></i> &nbsp;
+              <h3>facebook</h3>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/topfootballtransfers/">
+          <div>
+            <i class="fa-brands fa-instagram"></i> &nbsp;
+            <h3>Instagram</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="js/main.js"></script>
+</html>
